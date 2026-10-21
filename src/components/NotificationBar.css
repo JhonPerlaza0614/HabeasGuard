@@ -1,0 +1,96 @@
+.notif-taskbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  padding: 0 max(24px, calc((100vw - 1120px) / 2));
+  background: var(--teal-dark, #075d5d);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.notif-spacer { height: 36px; }
+
+.notif-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 26px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #eafbf8;
+  transition: background 0.15s ease;
+}
+
+.notif-trigger:hover,
+.notif-trigger.is-open { background: rgba(255, 255, 255, 0.2); }
+
+.notif-trigger:focus-visible { outline: 2px solid #8fe0d6; outline-offset: 2px; }
+
+.notif-count {
+  min-width: 17px;
+  height: 17px;
+  padding: 0 5px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #e8b84a;
+  color: #3a2a05;
+  font-size: 10.5px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.notif-chevron { opacity: 0.75; transition: transform 0.15s ease; }
+.notif-trigger.is-open .notif-chevron { transform: rotate(180deg); }
+
+.notif-dropdown {
+  position: absolute;
+  top: 40px;
+  left: max(24px, calc((100vw - 1120px) / 2));
+  width: 250px;
+  background: var(--paper, #fff);
+  color: var(--ink, #172333);
+  border: 1px solid var(--line, #dfe6e8);
+  border-radius: 10px;
+  padding: 12px 14px 14px;
+  box-shadow: 0 12px 28px rgba(23, 35, 51, 0.16);
+  animation: notif-pop 0.14s ease;
+}
+
+@keyframes notif-pop {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.notif-dropdown-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--teal-dark, #075d5d);
+  font-size: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--line, #dfe6e8);
+}
+
+.notif-dropdown-body {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 11px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.notif-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e8b84a;
+  flex: none;
+}

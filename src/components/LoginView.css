@@ -1,0 +1,223 @@
+.login-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  background: var(--canvas, #f5f8f8);
+  color: var(--ink, #172333);
+}
+
+.login-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 64px max(48px, calc((100% - 560px) / 2)) 64px 64px;
+  background: linear-gradient(165deg, var(--teal-dark, #075d5d), var(--teal, #087f78));
+  color: #eafbf8;
+}
+
+.login-aside-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px 13px 13px 4px;
+  background: rgba(255, 255, 255, 0.14);
+  font: 700 24px Georgia, serif;
+  margin-bottom: 6px;
+}
+
+.login-aside h1 {
+  margin: 0;
+  font: 700 36px/1.15 Georgia, serif;
+  letter-spacing: -0.5px;
+}
+
+.login-aside p {
+  margin: 0;
+  max-width: 380px;
+  color: #cdeeea;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.login-aside-points {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.login-aside-points li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #d9f3f0;
+  line-height: 1.5;
+}
+
+.login-aside-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8fe0d6;
+}
+
+.login-panel-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-panel {
+  width: 100%;
+  max-width: 380px;
+  background: var(--paper, #fff);
+  border: 1px solid var(--line, #dfe6e8);
+  border-radius: 14px;
+  padding: 34px 32px 28px;
+  box-shadow: 0 10px 30px rgba(23, 35, 51, 0.07);
+}
+
+.login-head {
+  margin-bottom: 22px;
+}
+
+.login-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--soft, #e8f5f3);
+  color: var(--teal-dark, #075d5d);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.login-head h2 {
+  margin: 0 0 6px;
+  font: 700 22px Georgia, serif;
+  color: var(--ink, #172333);
+}
+
+.login-head p {
+  margin: 0;
+  color: var(--muted, #667487);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.login-field {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.login-field span {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink, #172333);
+  margin-bottom: 6px;
+}
+
+.login-field input {
+  width: 100%;
+  border: 1px solid var(--line, #dfe6e8);
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-size: 13.5px;
+  color: var(--ink, #172333);
+  background: #fbfcfc;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-field input:focus {
+  border-color: var(--teal, #087f78);
+  box-shadow: 0 0 0 3px rgba(8, 127, 120, 0.12);
+}
+
+.login-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2px 0 20px;
+  gap: 10px;
+}
+
+.login-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--muted, #667487);
+}
+
+.login-checkbox input {
+  accent-color: var(--teal, #087f78);
+}
+
+.login-link {
+  border: 0;
+  background: transparent;
+  color: var(--teal, #087f78);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0;
+  cursor: pointer;
+}
+
+.login-submit {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: var(--teal, #087f78);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.login-submit:hover {
+  background: var(--teal-dark, #075d5d);
+}
+
+.login-submit:active {
+  transform: translateY(1px);
+}
+
+.login-foot {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 10.5px;
+  color: var(--muted, #667487);
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 860px) {
+  .login-shell {
+    grid-template-columns: 1fr;
+  }
+  .login-aside {
+    padding: 44px 28px;
+    gap: 12px;
+  }
+  .login-aside-points {
+    display: none;
+  }
+  .login-panel-wrap {
+    padding: 28px 20px 48px;
+  }
+}
